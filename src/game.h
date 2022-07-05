@@ -6,6 +6,7 @@
 #include "deck.h"
 
 class Game {
+    Deck deck_;
 public:
     Game();
 

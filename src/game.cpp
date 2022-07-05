@@ -1,9 +1,6 @@
 #include "game.h"
 
-Game::Game() {
-}
+Game::Game() : deck_(4) {}
 
 void Game::run() {
-    std::cout << "game's running\n";
-    Deck deck;
 }
