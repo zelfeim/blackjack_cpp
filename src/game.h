@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-#include "hand.h"
+#include "deck.h"
+
 class Game {
 public:
     Game();
