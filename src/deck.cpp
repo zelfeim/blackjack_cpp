@@ -1,5 +1,7 @@
 #include "deck.h"
 
+#include <iostream>
+
 // initializes the deck and all its cards
 Deck::Deck(const int& number_of_decks) : cards_() {
     // creating arrays so that we can create
@@ -23,8 +25,18 @@ Deck::Deck(const int& number_of_decks) : cards_() {
     for(int i = 0; i < number_of_decks; ++i) {
         for(auto& color : colors) {
             for(auto& face : faces) {
-                cards_.emplace_back(Card(color, face));
+                cards_.emplace_back(std::make_unique<Card>(color, face));
             }
         }
     }
+
+    for(auto& it : cards_)
+        std::cout << it->value() << '\n';
+}
+
+// shuffles the deck of cards
+void Deck::shuffle_deck() {
+    std::random_device rd;
+    std::mt19937 g(rd());
+    std::shuffle(cards_.begin(), cards_.end(), g);
 }

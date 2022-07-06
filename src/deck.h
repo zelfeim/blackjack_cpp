@@ -5,11 +5,12 @@
 #include <array>
 #include <random>
 #include <algorithm>
+#include <memory>
 
 #include "cards.h"
 
 class Deck {
-    std::vector<Card> cards_;
+    std::vector<std::unique_ptr<Card>> cards_;
 public:
     Deck(const int&);
 
