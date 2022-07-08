@@ -1,12 +1,12 @@
 #include "cards.h"
 
-Card::Card(const Color color, const Face face) : color_(color),
-                                                 face_(face),
-                                                 value_(init_value(face)),
-                                                 name_(init_name(face, color)) {}
+Card::Card(const Color& color, const Face& face) : color_(color),
+                                                   face_(face),
+                                                   value_(init_value(face)),
+                                                   name_(init_name(color, face)) {}
 
 // returns the correct value of face for constructors member initalization
-int init_value(const Face& face) {
+int Card::init_value(const Face& face) {
     switch(face) {
         case(Face::Ace):
             return 11;
@@ -48,11 +48,13 @@ int init_value(const Face& face) {
             return 10;
             break;
     }
+
+    return -1;
 }
 
 // returns string which is the displayed name of such card,
 // depending on its face and color
-std::string init_name(const Face& face, const Color& color) {
+std::string Card::init_name(const Color& color, const Face& face) {
     std::string temp {""};
 
     // appends the face name

@@ -17,7 +17,7 @@ public:
     Card(const Color&, const Face&);
 
     int init_value(const Face&);
-    std::string init_name(const Face&, const Color&);
+    std::string init_name(const Color&, const Face&);
 
     int value() const;
     std::string name() const;
