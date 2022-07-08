@@ -13,11 +13,12 @@ class Card {
     const int value_;
     const std::string name_;
 
-public:
-    Card(const Color&, const Face&);
-
+    // methods for member initalization
     int init_value(const Face&);
     std::string init_name(const Color&, const Face&);
+
+public:
+    Card(const Color&, const Face&);
 
     int value() const;
     std::string name() const;

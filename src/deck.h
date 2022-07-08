@@ -15,6 +15,8 @@ public:
     Deck(const int&);
 
     void shuffle_deck();
-};
 
+    std::unique_ptr<Card> draw_card();
+    void add_cards(std::vector<std::unique_ptr<Card>>);
+};
 #endif // DECK_H_
