@@ -12,6 +12,7 @@ private:
     std::vector<std::unique_ptr<Card>> held_cards_;
     int held_value_;
 public:
+    Hand();
     virtual ~Hand() = default;
 
     virtual int value() const;
